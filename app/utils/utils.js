@@ -55,15 +55,21 @@ utils.makeABCommand = function(opts) {
     if(opts.verbosity) {
         command.push("-v " + opts.verbosity);
     }
+
     if(opts.requests) {
         command.push("-n " + opts.requests);
     } else {
         command.push("-n 100");
     }
+
     if(opts.concurrency) {
         command.push("-c " + opts.concurrency);
     } else {
         command.push("-c 10");
+    }
+
+    if(opts.cookie) {
+        command.push("-C " + opts.cookie);
     }
 
     if(opts.url) {

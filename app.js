@@ -6,7 +6,8 @@
 var spawn = require('child_process').spawn,
     exec = require('child_process').exec,
     utils = require('./app/utils/utils'),
-    os = require('os');
+    os = require('os'),
+    roleTest = require('./test/role/roleTest');
 
 var serverConfig = require('./config/server');
 var env = process.env.NODE_ENV || 'development';
@@ -15,9 +16,7 @@ if(serverConfig[env]) {
 }
 
 function main() {
-    exec(utils.testABCommand(), function(err, stdout, stderr) {
-        console.log(stdout);
-    });
+    roleTest.testGetMainPlayerCommand();
     //process.exit(0);
 }
 
