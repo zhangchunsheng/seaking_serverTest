@@ -2,3 +2,9 @@ ab -v 2 -n 1000 -c 200 'http://211.155.86.237:4011/role/testCreateMainPlayer'
 
 ab -v 2 -n 1 -c 1 'http://211.155.86.237:4011/role/testCreateMainPlayer' >> test.txt
 ab -v 2 -n 1 -c 1 http://211.155.86.237:4011/role/testCreateMainPlayer >> test.txt
+
+http://192.168.1.99:4011/role/getMainPlayer
+
+-C connect.sid=s%3AYcm7d4MODUTacVVyDk6r69Gq.eJrQ4paS43jjOvnSfB74he0R3mVeQZUcIhIO4x11tVw
+ab -v 2 -n 1 -c 1 -C connect.sid=s%3AYcm7d4MODUTacVVyDk6r69Gq.eJrQ4paS43jjOvnSfB74he0R3mVeQZUcIhIO4x11tVw http://192.168.1.22:4011/role/getMainPlayer
+ab -v 2 -n 1 -c 1 -C connect.sid=s%3AYcm7d4MODUTacVVyDk6r69Gq.eJrQ4paS43jjOvnSfB74he0R3mVeQZUcIhIO4x11tVw http://192.168.1.22:4011/role/getMainPlayer >> test.txt
