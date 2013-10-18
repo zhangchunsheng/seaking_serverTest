@@ -27,7 +27,7 @@ function main() {
             roleTest.testGetMainPlayerCommand();
             break;
         case consts.COMMAND.ucenter.user.autoRegister:
-            var num = 1;
+            var num = 2;
             user.autoRegister(num);
             break;
         default:
