@@ -52,7 +52,7 @@ fileHelper.saveData = function(data, order, fileName, cb) {
     cb(data);
 }
 
-fileHelper.readData = function(fileName, next) {
+fileHelper.readFile = function(fileName, next) {
     fs.readFile(fileName, function(err, data) {
         if(err)
             throw err;
