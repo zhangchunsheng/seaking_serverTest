@@ -7,6 +7,19 @@ module.exports = {
     COMMAND: {
         roleTest: {
             testGetMainPlayerCommand: "testGetMainPlayerCommand"
+        },
+        ucenter: {
+            user: {
+                autoRegister: "autoRegister"
+            }
+        },
+        seaking_server: {
+            auth: {
+                auth: "auth"
+            },
+            role: {
+
+            }
         }
     }
 }

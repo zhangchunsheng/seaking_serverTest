@@ -1,11 +1,25 @@
 {
     "development": {
         "host": "192.168.1.99",
-        "port": 4011
+        "seaking_server": {
+            "host": "192.168.1.99",
+            "port": 4011
+        },
+        "ucenter": {
+            "host": "192.168.1.99",
+            "port": 8090
+        }
     },
 
     "production": {
         "host": "211.155.86.237",
-        "port": 4011
+        "seaking_server": {
+            "host": "211.155.86.237",
+            "port": 4011
+        },
+        "ucenter": {
+            "host": "211.155.86.237",
+            "port": 8090
+        }
     }
 }

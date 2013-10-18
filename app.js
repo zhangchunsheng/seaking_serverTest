@@ -8,6 +8,9 @@ var spawn = require('child_process').spawn,
     utils = require('./app/utils/utils'),
     os = require('os'),
     roleTest = require('./test/role/roleTest'),
+    user = require('./app/ucenter/user'),
+    auth = require('./app/seaking_server/auth'),
+    role = require('./app/seaking_server/role'),
     consts = require('./app/consts/consts');
 
 utils.doProcess(process);
@@ -22,6 +25,10 @@ function main() {
     switch(process.env.METHOD) {
         case consts.COMMAND.roleTest.testGetMainPlayerCommand:
             roleTest.testGetMainPlayerCommand();
+            break;
+        case consts.COMMAND.ucenter.user.autoRegister:
+            var num = 1;
+            user.autoRegister(num);
             break;
         default:
             console.log("wrong command");
