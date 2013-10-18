@@ -66,7 +66,7 @@ httpHelper.get = function(host, port, path, headers, params, cb) {
         response.on('end', function () {
             var obj = JSON.parse(str);
             if(typeof cb == "function")
-                cb(obj);
+                cb(obj, response);
         });
     }
 

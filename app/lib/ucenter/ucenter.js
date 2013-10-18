@@ -23,7 +23,7 @@ ucenter.autoRegister = function(data, next) {
 
     data.registerType = 2;
 
-    httpHelper.get(host, port, path, headers, data, function(data) {
+    httpHelper.get(host, port, path, headers, data, function(data, response) {
         next(data);
     });
 }

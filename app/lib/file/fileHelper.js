@@ -24,26 +24,33 @@ fileHelper.createFile = function(fileName) {
  * @param fileName
  * @param cb
  */
-fileHelper.saveData = function(data, order, fileName, cb) {
+fileHelper.saveData = function(data, order, fileName, flags, cb) {
     var __parentDir = path.dirname(process.mainModule.filename);
     var stream = fs.createWriteStream(__parentDir + '/data/' + fileName + serverConfig.host + '.txt', {
         encoding: 'utf8',
-        flags: 'a'
+        flags: flags
     });
 
     var str = "";
     /*for(var i in data) {
         str += i + " ";
     }*/
-    if(Object.prototype.toString.call(order) === '[object Array]') {
-        for(var i = 0 ; i < order.length ; i++) {
-            str += data[order[i]] + " ";
-        }
-    } else {
-        for(var i in data) {
+    if(Object.prototype.toString.call(data) === '[object Array]') {
+        for(var i = 0 ; i < data.length ; i++) {
             str += data[i] + " ";
         }
+    } else {
+        if(Object.prototype.toString.call(order) === '[object Array]' || order.length > 0) {
+            for(var i = 0 ; i < order.length ; i++) {
+                str += data[order[i]] + " ";
+            }
+        } else {
+            for(var i in data) {
+                str += data[i] + " ";
+            }
+        }
     }
+
     stream.write(str);
 
     stream.write("\n");
@@ -59,4 +66,13 @@ fileHelper.readFile = function(fileName, next) {
         var array = data.toString().split("\n");
         next(array);
     });
+}
+
+/**
+ *
+ * @param fileName
+ * @param next
+ */
+fileHelper.removeFile = function(fileName, next) {
+    fs.unlink(fileName, next);
 }

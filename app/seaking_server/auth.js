@@ -5,6 +5,9 @@
  */
 var auth = module.exports;
 var fileHelper = require('../lib/file/fileHelper');
+var seaking_server = require('../lib/seaking_server/seaking_server');
+var utils = require('../utils/utils');
+var httpUtil = require('../utils/httpUtil');
 
 var serverConfig = require('../../config/server');
 var env = process.env.NODE_ENV || 'development';
@@ -33,6 +36,22 @@ auth.auth = function() {
             userInfo.uid = rows[5];
             users.push(userInfo);
         }
-        console.log(users);
+
+        fileHelper.removeFile("data/cookie" + serverConfig.host + ".txt", function(data) {
+            saveCookie(users);
+        });
+    });
+}
+
+function saveCookie(users) {
+    if(users.length == 0)
+        return;
+    var user = users.shift();
+    seaking_server.auth({
+        token: user.token
+    }, function(data, response) {
+        fileHelper.saveData(httpUtil.getCookie(response.headers["set-cookie"][0]), [], "cookie", 'a', function(data) {
+            saveCookie(users);
+        })
     });
 }

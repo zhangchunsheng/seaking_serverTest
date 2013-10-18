@@ -14,7 +14,7 @@ var user = module.exports;
 user.autoRegister = function(num) {
     var order = ["code", "loginName", "registerType", "sessionId", "token", "uid"];
     ucenter.autoRegister({}, function(data) {
-        fileHelper.saveData(data, order, "userInfo", function(data) {
+        fileHelper.saveData(data, order, "userInfo", 'a', function(data) {
             console.log("data has saved");
             num--;
             if(num == 0) {
