@@ -5,19 +5,19 @@
  * Date: 2013-09-17
  * Description: ucenter
  */
-var ucenterConfig = require('../../../shared/config/ucenter');
+var serverConfig = require('../../../config/server');
 var httpHelper = require('../http/httpHelper');
 
 var env = process.env.NODE_ENV || 'development';
-if(ucenterConfig[env]) {
-    ucenterConfig = ucenterConfig[env];
+if(serverConfig[env]) {
+    serverConfig = serverConfig[env];
 }
 
 var ucenter = module.exports;
 
 ucenter.autoRegister = function(data, next) {
-    var host = ucenterConfig.host;
-    var port = ucenterConfig.port;
+    var host = serverConfig.ucenter.host;
+    var port = serverConfig.ucenter.port;
     var path = "/autoRegister";
     var headers = {};
 
@@ -29,8 +29,8 @@ ucenter.autoRegister = function(data, next) {
 }
 
 ucenter.saveInduLog = function(data, next) {
-    var host = ucenterConfig.host;
-    var port = ucenterConfig.port;
+    var host = serverConfig.ucenter.host;
+    var port = serverConfig.ucenter.port;
     var path = "/induLog/save";
     var headers = {};
 
@@ -42,8 +42,8 @@ ucenter.saveInduLog = function(data, next) {
 }
 
 ucenter.saveTaskLog = function(data, next) {
-    var host = ucenterConfig.host;
-    var port = ucenterConfig.port;
+    var host = serverConfig.ucenter.host;
+    var port = serverConfig.ucenter.port;
     var path = "/taskLog/save";
     var headers = {};
 
@@ -55,8 +55,8 @@ ucenter.saveTaskLog = function(data, next) {
 }
 
 ucenter.saveBattleLog = function(data, next) {
-    var host = ucenterConfig.host;
-    var port = ucenterConfig.port;
+    var host = serverConfig.ucenter.host;
+    var port = serverConfig.ucenter.port;
     var path = "/battleLog/save";
     var headers = {};
 
@@ -66,8 +66,8 @@ ucenter.saveBattleLog = function(data, next) {
 }
 
 ucenter.addPlayer = function(data, next) {
-    var host = ucenterConfig.host;
-    var port = ucenterConfig.port;
+    var host = serverConfig.ucenter.host;
+    var port = serverConfig.ucenter.port;
     var path = "/user/addPlayer";
     var headers = {};
 
@@ -77,8 +77,8 @@ ucenter.addPlayer = function(data, next) {
 }
 
 ucenter.updatePlayer = function(data, next) {
-    var host = ucenterConfig.host;
-    var port = ucenterConfig.port;
+    var host = serverConfig.ucenter.host;
+    var port = serverConfig.ucenter.port;
     var path = "/user/updatePlayer";
     var headers = {};
 
@@ -88,8 +88,8 @@ ucenter.updatePlayer = function(data, next) {
 }
 
 ucenter.removePlayer = function(data, next) {
-    var host = ucenterConfig.host;
-    var port = ucenterConfig.port;
+    var host = serverConfig.ucenter.host;
+    var port = serverConfig.ucenter.port;
     var path = "/user/removePlayer";
     var headers = {};
 
