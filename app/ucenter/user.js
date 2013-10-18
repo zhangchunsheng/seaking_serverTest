@@ -12,8 +12,9 @@ var user = module.exports;
  * 注册并保存用户信息
  */
 user.autoRegister = function(num) {
+    var order = ["code", "loginName", "registerType", "sessionId", "token", "uid"];
     ucenter.autoRegister({}, function(data) {
-        fileHelper.saveData(data, "userInfo", function(data) {
+        fileHelper.saveData(data, order, "userInfo", function(data) {
             console.log("data has saved");
             num--;
             if(num == 0) {

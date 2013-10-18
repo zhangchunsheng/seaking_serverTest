@@ -1,0 +1,14 @@
+code: 200
+loginName: "wozlla"
+registerType: "1"
+sessionId: "6CFD1F0D7E9614E58238C882F345BF59"
+token: "d0a5933d01b0bd7dfb8e00cd73292f4d6149ef2a58c89ffff8d3fccb82c90c68"
+uid: "1"
+
+自动注册
+code: 200
+loginName: "w106528"
+registerType: 2
+sessionId: "432DEAEFBF76E778A216AD77F52E5292"
+token: "fe4f436bb5163e5a31d6f1d635dd00662f81b0fbd8db12802bf079586c26a87d"
+uid: 6549
