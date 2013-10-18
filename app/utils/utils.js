@@ -4,8 +4,37 @@
  * Description: utils
  */
 var os = require('os');
+var consts = require('../consts/consts');
 
 var utils = module.exports;
+
+utils.invokeCallback = function(cb) {
+    if(!!cb && typeof cb === 'function') {
+        cb.apply(null, Array.prototype.slice.call(arguments, 1));
+    }
+}
+
+/**
+ *
+ * @param process
+ */
+utils.doProcess = function(process) {
+    var argv = process.argv;
+    var array = [];
+    process.env.METHOD = consts.COMMAND.roleTest.testGetMainPlayerCommand;
+    for(var i = 2 ; i < argv.length ; i++) {
+        array = argv[i].split("=");
+        if(array[0] == "env") {
+            process.env.NODE_ENV = array[1];
+        } else if(array[0] == "serverType") {
+            process.env.SERVER_TYPE = array[1];
+        } else if(array[0] == "port") {
+            process.env.PORT = array[1];
+        } else if(array[0] == "method") {
+            process.env.METHOD = array[1];
+        }
+    }
+}
 
 utils.testABCommand = function() {
     if(os.platform() == "win32") {
