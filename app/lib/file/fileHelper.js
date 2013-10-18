@@ -15,6 +15,9 @@ if(serverConfig[env]) {
 
 var fileHelper = module.exports;
 
+fileHelper.createFile = function(fileName) {
+
+}
 /**
  *
  * @param data
@@ -47,4 +50,13 @@ fileHelper.saveData = function(data, order, fileName, cb) {
     stream.end();
 
     cb(data);
+}
+
+fileHelper.readData = function(fileName, next) {
+    fs.readFile(fileName, function(err, data) {
+        if(err)
+            throw err;
+        var array = data.toString().split("\n");
+        next(array);
+    });
 }

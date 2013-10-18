@@ -30,6 +30,9 @@ function main() {
             var num = 2;
             user.autoRegister(num);
             break;
+        case consts.COMMAND.seaking_server.auth.auth:
+            auth.auth();
+            break;
         default:
             console.log("wrong command");
     }

@@ -18,7 +18,7 @@ module.exports = {
                 auth: "auth"
             },
             role: {
-
+                createMainPlayer: "createMainPlayer"
             }
         }
     }
