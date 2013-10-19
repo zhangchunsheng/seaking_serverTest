@@ -35,10 +35,16 @@ function main() {
             auth.auth();
             break;
         case consts.COMMAND.seaking_server.role.createMainPlayer:
+            // 一分钟执行一次，执行多个ab test，-n 1200 -c 20
+            // 注册一秒钟执行执行 -n 60 -c 1
             role.createMainPlayer();
             break;
         case consts.COMMAND.abTest.testServer:
-
+            testServer.testServer();
+            break;
+        case consts.COMMAND.userTest.testAutoRegister:
+            testServer.testAutoRegister();
+            break;
         default:
             console.log("wrong command");
     }

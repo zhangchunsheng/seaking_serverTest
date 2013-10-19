@@ -5,6 +5,9 @@
  */
 module.exports = {
     COMMAND: {
+        userTest: {
+            testAutoRegister: "testAutoRegister"
+        },
         roleTest: {
             testGetMainPlayerCommand: "testGetMainPlayerCommand"
         },
@@ -24,5 +27,10 @@ module.exports = {
                 createMainPlayer: "createMainPlayer"
             }
         }
+    },
+
+    serverType: {
+        ucenter: "ucenter",
+        seaking_server: "seaking_server"
     }
 }

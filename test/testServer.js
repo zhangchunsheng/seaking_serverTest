@@ -3,6 +3,7 @@
  * Date: 2013-10-19
  * Description: testServer
  */
+var userTest = require('./ucenter/userTest');
 var utils = require('../app/utils/utils');
 
 var serverConfig = require('../config/server');
@@ -12,3 +13,11 @@ if(serverConfig[env]) {
 }
 
 var testServer = module.exports;
+
+testServer.testServer = function() {
+
+}
+
+testServer.testAutoRegister = function() {
+    userTest.testAutoRegister();
+}
