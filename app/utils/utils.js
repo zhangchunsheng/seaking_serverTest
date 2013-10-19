@@ -115,7 +115,7 @@ utils.makeABCommand = function(opts) {
 
 utils.getUrl = function(command, url) {
     if(os.platform() == "win32") {
-        command.push(url);
+        command.push("\"" + url + "\"");
     } else {
         command.push("'" + url + "'");
     }

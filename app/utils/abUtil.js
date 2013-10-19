@@ -19,8 +19,12 @@ abUtil.getAutoRegisterUrl = function() {
     return abUtil.getHost(consts.serverType.ucenter) + "/autoRegister";
 }
 
-abUtil.getCreateMainPlayerUrl = function() {
-    return abUtil.getHost(consts.serverType.seaking_server) + "/role/createMainPlayer";
+abUtil.getCreateMainPlayerUrl = function(data) {
+    var url = abUtil.getHost(consts.serverType.seaking_server) + "/role/createMainPlayer";
+    var params = abUtil.makeParams(data);
+    if(params != "")
+        url = url + "?" + params;
+    return url;
 }
 
 abUtil.getMainPlayerUrl = function() {
@@ -29,6 +33,15 @@ abUtil.getMainPlayerUrl = function() {
 
 abUtil.getHost = function(serverType) {
     return "http://" + serverConfig[serverType].host + ":" + serverConfig[serverType].port;
+}
+
+abUtil.makeParams = function(data) {
+    var params = "";
+    for(var o in data) {
+        params += o + "=" + data[o] + "&"
+    }
+    params = params.substr(0, params.length - 1);
+    return params;
 }
 
 abUtil.getOutputFile = function(filename) {

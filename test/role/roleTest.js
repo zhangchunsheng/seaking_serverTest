@@ -31,14 +31,14 @@ roleTest.testGetMainPlayerCommand = function() {
     });
 }
 
-roleTest.testCreateMainPlayer = function() {
+roleTest.testCreateMainPlayer = function(data) {
     abUtil.getRandomCookie(function(cookie) {
         exec(utils.makeABCommand({
             verbosity: serverConfig.abTest[consts.serverType.seaking_server].verbosity,
             requests: serverConfig.abTest[consts.serverType.seaking_server].requests,
             concurrency: serverConfig.abTest[consts.serverType.seaking_server].concurrency,
             cookie: cookie,
-            url: abUtil.getCreateMainPlayerUrl(),
+            url: abUtil.getCreateMainPlayerUrl(data),
             output: abUtil.getOutputFile("createMainPlayer")
         }), function(err, stdout, stderr) {
             console.log(stdout);

@@ -24,5 +24,10 @@ testServer.testAutoRegister = function() {
 }
 
 testServer.testCreateMainPlayer = function() {
-    roleTest.testCreateMainPlayer();
+    var data = {
+        cId: 1,
+        nickname: "w100000",
+        isRandom: 0
+    }
+    roleTest.testCreateMainPlayer(data);
 }
