@@ -1,7 +1,7 @@
 /**
  * Author: ZhangChunsheng
  * Date: 2013-10-19
- * Description: battleTest
+ * Description: equipTest
  */
 var spawn = require('child_process').spawn,
     exec = require('child_process').exec,
