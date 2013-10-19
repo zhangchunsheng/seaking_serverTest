@@ -7,7 +7,8 @@ var spawn = require('child_process').spawn,
     exec = require('child_process').exec,
     os = require('os'),
     utils = require('../../app/utils/utils'),
-    abUtil = require('../../app/utils/abUtil');
+    abUtil = require('../../app/utils/abUtil'),
+    consts = require('../../app/consts/consts');
 
 var serverConfig = require('../../config/server');
 var env = process.env.NODE_ENV || 'development';
