@@ -51,7 +51,7 @@ function createMainPlayer(cookies) {
         nickname: "w" + i,
         isRandom: 0
     }, function(data, response) {
-        fileHelper.saveData([cookie.cookie,JSON.stringify(data)], [], "createMainPlayer", 'a', function(data) {
+        fileHelper.saveData([cookie.cookie, "w" + i, JSON.stringify(data)], [], "createMainPlayer", 'a', function(data) {
             i++;
             createMainPlayer(cookies);
         })
