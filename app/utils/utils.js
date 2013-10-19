@@ -128,3 +128,7 @@ utils.getUrl = function(command, url) {
 utils.getPlatform = function() {
     return os.platform();
 }
+
+utils.random = function(lower, higher) {
+    return Math.floor(Math.random() * (higher + 1 - lower)) + lower;
+}

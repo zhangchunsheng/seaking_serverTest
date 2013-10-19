@@ -7,7 +7,8 @@ var spawn = require('child_process').spawn,
     exec = require('child_process').exec,
     os = require('os'),
     utils = require('../../app/utils/utils'),
-    abUtil = require('../../app/utils/abUtil');
+    abUtil = require('../../app/utils/abUtil'),
+    consts = require('../../app/consts/consts');
 
 var serverConfig = require('../../config/server');
 var env = process.env.NODE_ENV || 'development';
@@ -19,11 +20,11 @@ var userTest = module.exports;
 
 userTest.testAutoRegister = function() {
     exec(utils.makeABCommand({
-        verbosity: 2,
-        requests: 1,
-        concurrency: 1,
+        verbosity: serverConfig.abTest[consts.serverType.ucenter].verbosity,
+        requests: serverConfig.abTest[consts.serverType.ucenter].requests,
+        concurrency: serverConfig.abTest[consts.serverType.ucenter].concurrency,
         url: abUtil.getAutoRegisterUrl(),
-        output: "autoRegister.txt"
+        output: abUtil.getOutputFile("autoRegister")
     }), function(err, stdout, stderr) {
         console.log(stdout);
     });

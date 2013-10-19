@@ -45,6 +45,9 @@ function main() {
         case consts.COMMAND.userTest.testAutoRegister:
             testServer.testAutoRegister();
             break;
+        case consts.COMMAND.roleTest.testCreateMainPlayer:
+            testServer.testCreateMainPlayer();
+            break;
         default:
             console.log("wrong command");
     }

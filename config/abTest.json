@@ -1,0 +1,11 @@
+{
+    "development": {
+        "registerUserNum": 3,
+        "dayActivityUser": 3
+    },
+
+    "production": {
+        "registerUserNum": 30000,
+        "dayActivityUser": 5000
+    }
+}

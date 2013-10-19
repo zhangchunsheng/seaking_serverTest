@@ -9,7 +9,8 @@ module.exports = {
             testAutoRegister: "testAutoRegister"
         },
         roleTest: {
-            testGetMainPlayerCommand: "testGetMainPlayerCommand"
+            testGetMainPlayerCommand: "testGetMainPlayerCommand",
+            testCreateMainPlayer: "testCreateMainPlayer"
         },
         abTest: {
             testServer: "testServer"

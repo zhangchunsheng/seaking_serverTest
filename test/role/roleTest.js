@@ -6,7 +6,8 @@
 var spawn = require('child_process').spawn,
     exec = require('child_process').exec,
     os = require('os'),
-    utils = require('../../app/utils/utils');
+    utils = require('../../app/utils/utils'),
+    abUtil = require('../../app/utils/abUtil');
 
 var serverConfig = require('../../config/server');
 var env = process.env.NODE_ENV || 'development';
@@ -18,26 +19,28 @@ var roleTest = module.exports;
 
 roleTest.testGetMainPlayerCommand = function() {
     exec(utils.makeABCommand({
-        verbosity: 2,
-        requests: 1,
-        concurrency: 1,
+        verbosity: serverConfig.abTest[consts.serverType.seaking_server].verbosity,
+        requests: serverConfig.abTest[consts.serverType.seaking_server].requests,
+        concurrency: serverConfig.abTest[consts.serverType.seaking_server].concurrency,
         cookie: "connect.sid=s%3AYcm7d4MODUTacVVyDk6r69Gq.eJrQ4paS43jjOvnSfB74he0R3mVeQZUcIhIO4x11tVw",
-        url: "http://192.168.1.22:4011/role/getMainPlayer",
-        output: "test.txt"
+        url: abUtil.getMainPlayerUrl(),
+        output: abUtil.getOutputFile("getMainPlayer")
     }), function(err, stdout, stderr) {
         console.log(stdout);
     });
 }
 
 roleTest.testCreateMainPlayer = function() {
-    exec(utils.makeABCommand({
-        verbosity: 2,
-        requests: 1,
-        concurrency: 1,
-        cookie: "connect.sid=s%3AYcm7d4MODUTacVVyDk6r69Gq.eJrQ4paS43jjOvnSfB74he0R3mVeQZUcIhIO4x11tVw",
-        url: "http://192.168.1.22:4011/role/getMainPlayer",
-        output: "test.txt"
-    }), function(err, stdout, stderr) {
-        console.log(stdout);
+    abUtil.getRandomCookie(function(cookie) {
+        exec(utils.makeABCommand({
+            verbosity: serverConfig.abTest[consts.serverType.seaking_server].verbosity,
+            requests: serverConfig.abTest[consts.serverType.seaking_server].requests,
+            concurrency: serverConfig.abTest[consts.serverType.seaking_server].concurrency,
+            cookie: cookie,
+            url: abUtil.getCreateMainPlayerUrl(),
+            output: abUtil.getOutputFile("createMainPlayer")
+        }), function(err, stdout, stderr) {
+            console.log(stdout);
+        });
     });
 }

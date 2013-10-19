@@ -4,6 +4,7 @@
  * Description: testServer
  */
 var userTest = require('./ucenter/userTest');
+var roleTest = require('./role/roleTest');
 var utils = require('../app/utils/utils');
 
 var serverConfig = require('../config/server');
@@ -20,4 +21,8 @@ testServer.testServer = function() {
 
 testServer.testAutoRegister = function() {
     userTest.testAutoRegister();
+}
+
+testServer.testCreateMainPlayer = function() {
+    roleTest.testCreateMainPlayer();
 }
