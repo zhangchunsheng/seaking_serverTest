@@ -8,6 +8,9 @@ module.exports = {
         roleTest: {
             testGetMainPlayerCommand: "testGetMainPlayerCommand"
         },
+        abTest: {
+            testServer: "testServer"
+        },
         ucenter: {
             user: {
                 autoRegister: "autoRegister"

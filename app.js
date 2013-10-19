@@ -11,6 +11,7 @@ var spawn = require('child_process').spawn,
     user = require('./app/ucenter/user'),
     auth = require('./app/seaking_server/auth'),
     role = require('./app/seaking_server/role'),
+    testServer = require('./test/testServer'),
     consts = require('./app/consts/consts');
 
 utils.doProcess(process);
@@ -33,6 +34,11 @@ function main() {
         case consts.COMMAND.seaking_server.auth.auth:
             auth.auth();
             break;
+        case consts.COMMAND.seaking_server.role.createMainPlayer:
+            role.createMainPlayer();
+            break;
+        case consts.COMMAND.abTest.testServer:
+
         default:
             console.log("wrong command");
     }

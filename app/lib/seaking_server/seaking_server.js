@@ -23,3 +23,16 @@ seaking_server.auth = function(data, next) {
         next(data, response);
     });
 }
+
+seaking_server.createMainPlayer = function(cookie, data, next) {
+    var host = serverConfig.seaking_server.host;
+    var port = serverConfig.seaking_server.port;
+    var path = "/role/createMainPlayer";
+    var headers = {
+        cookie: cookie
+    };
+
+    httpHelper.get(host, port, path, headers, data, function(data, response) {
+        next(data, response);
+    });
+}
