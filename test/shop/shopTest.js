@@ -18,7 +18,7 @@ if(serverConfig[env]) {
 
 var shopTest = module.exports;
 
-shopTest.buyItem = function(data) {
+shopTest.testBuyItem = function(data) {
     abUtil.getRandomCookie(function(cookie) {
         exec(utils.makeABCommand({
             verbosity: serverConfig.abTest[consts.serverType.seaking_server].verbosity,
@@ -33,7 +33,7 @@ shopTest.buyItem = function(data) {
     });
 }
 
-shopTest.sellItem = function(data) {
+shopTest.testSellItem = function(data) {
     abUtil.getRandomCookie(function(cookie) {
         exec(utils.makeABCommand({
             verbosity: serverConfig.abTest[consts.serverType.seaking_server].verbosity,

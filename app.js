@@ -13,6 +13,13 @@ var spawn = require('child_process').spawn,
     role = require('./app/seaking_server/role'),
     player = require('./app/seaking_server/player'),
     testServer = require('./test/testServer'),
+    battleTest = require('./battle/battleTest'),
+    equipTest = require('./battle/equipTest'),
+    induTest = require('./battle/induTest'),
+    playerTest = require('./battle/playerTest'),
+    shopTest = require('./battle/shopTest'),
+    skillTest = require('./battle/skillTest'),
+    taskTest = require('./battle/taskTest'),
     consts = require('./app/consts/consts');
 
 utils.doProcess(process);
@@ -52,6 +59,39 @@ function main() {
             break;
         case consts.COMMAND.roleTest.testCreateMainPlayer:
             testServer.testCreateMainPlayer();
+            break;
+        case consts.COMMAND.battleTest.testBattle:
+            testServer.testBattle();
+            break;
+        case consts.COMMAND.equipTest.testEquip:
+            testServer.testEquip();
+            break;
+        case consts.COMMAND.equipTest.testUnequip:
+            testServer.testUnequip();
+            break;
+        case consts.COMMAND.induTest.testTriggerEvent:
+            testServer.testTriggerEvent();
+            break;
+        case consts.COMMAND.playerTest.testEnterScene:
+            testServer.testEnterScene();
+            break;
+        case consts.COMMAND.shopTest.testBuyItem:
+            testServer.testBuyItem();
+            break;
+        case consts.COMMAND.shopTest.testSellItem:
+            testServer.testSellItem();
+            break;
+        case consts.COMMAND.skillTest.testLearnSkill:
+            testServer.testLearnSkill();
+            break;
+        case consts.COMMAND.skillTest.testUpgradeSkill:
+            testServer.testUpgradeSkill();
+            break;
+        case consts.COMMAND.taskTest.testStartTask:
+            testServer.testUpgradeSkill();
+            break;
+        case consts.COMMAND.taskTest.testHandOverTask:
+            testServer.testUpgradeSkill();
             break;
         default:
             console.log("wrong command");

@@ -18,7 +18,7 @@ if(serverConfig[env]) {
 
 var skillTest = module.exports;
 
-skillTest.learnSkill = function(data) {
+skillTest.testLearnSkill = function(data) {
     abUtil.getRandomCookie(function(cookie) {
         exec(utils.makeABCommand({
             verbosity: serverConfig.abTest[consts.serverType.seaking_server].verbosity,
@@ -33,7 +33,7 @@ skillTest.learnSkill = function(data) {
     });
 }
 
-skillTest.upgradeSkill = function(data) {
+skillTest.testUpgradeSkill = function(data) {
     abUtil.getRandomCookie(function(cookie) {
         exec(utils.makeABCommand({
             verbosity: serverConfig.abTest[consts.serverType.seaking_server].verbosity,

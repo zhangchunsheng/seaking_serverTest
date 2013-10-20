@@ -18,7 +18,7 @@ if(serverConfig[env]) {
 
 var playerTest = module.exports;
 
-playerTest.enterScene = function(data) {
+playerTest.testEnterScene = function(data) {
     abUtil.getRandomCookie(function(cookie) {
         exec(utils.makeABCommand({
             verbosity: serverConfig.abTest[consts.serverType.seaking_server].verbosity,

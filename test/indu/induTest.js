@@ -18,7 +18,7 @@ if(serverConfig[env]) {
 
 var induTest = module.exports;
 
-induTest.triggerEvent = function(data) {
+induTest.testTriggerEvent = function(data) {
     abUtil.getRandomCookie(function(cookie) {
         exec(utils.makeABCommand({
             verbosity: serverConfig.abTest[consts.serverType.seaking_server].verbosity,

@@ -12,6 +12,31 @@ module.exports = {
             testGetMainPlayerCommand: "testGetMainPlayerCommand",
             testCreateMainPlayer: "testCreateMainPlayer"
         },
+        battleTest: {
+            testBattle: "testBattle"
+        },
+        equipTest: {
+            testEquip: "testEquip",
+            testUnequip: "testUnequip"
+        },
+        induTest: {
+            testTriggerEvent: "testTriggerEvent"
+        },
+        playerTest: {
+            testEnterScene: "testEnterScene"
+        },
+        shopTest: {
+            testBuyItem: "testBuyItem",
+            testSellItem: "testSellItem"
+        },
+        skillTest: {
+            testLearnSkill: "testLearnSkill",
+            testUpgradeSkill: "testUpgradeSkill"
+        },
+        taskTest: {
+            testStartTask: "testStartTask",
+            testHandOverTask: "testHandOverTask"
+        },
         abTest: {
             testServer: "testServer"
         },

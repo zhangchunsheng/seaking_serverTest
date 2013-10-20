@@ -18,7 +18,7 @@ if(serverConfig[env]) {
 
 var taskTest = module.exports;
 
-taskTest.startTask = function(data) {
+taskTest.testStartTask = function(data) {
     abUtil.getRandomCookie(function(cookie) {
         exec(utils.makeABCommand({
             verbosity: serverConfig.abTest[consts.serverType.seaking_server].verbosity,
@@ -33,7 +33,7 @@ taskTest.startTask = function(data) {
     });
 }
 
-taskTest.handOverTask = function(data) {
+taskTest.testHandOverTask = function(data) {
     abUtil.getRandomCookie(function(cookie) {
         exec(utils.makeABCommand({
             verbosity: serverConfig.abTest[consts.serverType.seaking_server].verbosity,

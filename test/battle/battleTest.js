@@ -18,15 +18,15 @@ if(serverConfig[env]) {
 
 var battleTest = module.exports;
 
-battleTest.battle = function(data) {
+battleTest.testBattle = function(data) {
     abUtil.getRandomCookie(function(cookie) {
         exec(utils.makeABCommand({
             verbosity: serverConfig.abTest[consts.serverType.seaking_server].verbosity,
             requests: serverConfig.abTest[consts.serverType.seaking_server].requests,
             concurrency: serverConfig.abTest[consts.serverType.seaking_server].concurrency,
             cookie: cookie,
-            url: abUtil.getCreateMainPlayerUrl(data),
-            output: abUtil.getOutputFile("createMainPlayer")
+            url: abUtil.getBattleUrl(data),
+            output: abUtil.getOutputFile("battle")
         }), function(err, stdout, stderr) {
             console.log(stdout);
         });

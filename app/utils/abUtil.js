@@ -27,6 +27,14 @@ abUtil.getCreateMainPlayerUrl = function(data) {
     return url;
 }
 
+abUtil.getBattleUrl = function(data) {
+    var url = abUtil.getHost(consts.serverType.seaking_server) + "/battle/battle";
+    var params = abUtil.makeParams(data);
+    if(params != "")
+        url = url + "?" + params;
+    return url;
+}
+
 abUtil.getMainPlayerUrl = function() {
     return abUtil.getHost(consts.serverType.seaking_server) + "/role/getMainPlayer";
 }

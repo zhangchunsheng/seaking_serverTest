@@ -18,7 +18,7 @@ if(serverConfig[env]) {
 
 var equipTest = module.exports;
 
-equipTest.equip = function(data) {
+equipTest.testEquip = function(data) {
     abUtil.getRandomCookie(function(cookie) {
         exec(utils.makeABCommand({
             verbosity: serverConfig.abTest[consts.serverType.seaking_server].verbosity,
@@ -33,7 +33,7 @@ equipTest.equip = function(data) {
     });
 }
 
-equipTest.unequip = function(data) {
+equipTest.testUnequip = function(data) {
     abUtil.getRandomCookie(function(cookie) {
         exec(utils.makeABCommand({
             verbosity: serverConfig.abTest[consts.serverType.seaking_server].verbosity,
