@@ -6,6 +6,12 @@
 var userTest = require('./ucenter/userTest');
 var roleTest = require('./role/roleTest');
 var battleTest = require('./battle/battleTest');
+var equipTest = require('./equip/equipTest');
+var induTest = require('./indu/induTest');
+var playerTest = require('./player/playerTest');
+var shopTest = require('./shop/shopTest');
+var skillTest = require('./skill/skillTest');
+var taskTest = require('./task/taskTest');
 var utils = require('../app/utils/utils');
 
 var serverConfig = require('../config/server');

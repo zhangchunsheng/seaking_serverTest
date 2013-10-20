@@ -29,7 +29,7 @@ function enterIndu(cookies) {
     var cookie = cookies.shift();
     var date = new Date();
     var params = {
-        induId: "Ins1010"
+        induId: "Ins10101"
     };
     seaking_server.enterIndu(cookie.cookie, params, function(data, response) {
         fileHelper.saveData([date.toUTCString(), date.getTime(), cookie.cookie, JSON.stringify(params), JSON.stringify(data)], [], "enterIndu", 'a', function(data) {
