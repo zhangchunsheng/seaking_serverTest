@@ -1,5 +1,5 @@
 {
-    "development": {
+    "production": {
         "host": "192.168.1.99",
         "seaking_server": {
             "host": "192.168.1.99",
@@ -25,7 +25,7 @@
         }
     },
 
-    "production": {
+    "development": {
         "host": "211.155.86.237",
         "seaking_server": {
             "host": "211.155.86.237",
