@@ -88,10 +88,10 @@ function main() {
             testServer.testUpgradeSkill();
             break;
         case consts.COMMAND.taskTest.testStartTask:
-            testServer.testUpgradeSkill();
+            testServer.testStartTask();
             break;
         case consts.COMMAND.taskTest.testHandOverTask:
-            testServer.testUpgradeSkill();
+            testServer.testHandOverTask();
             break;
         default:
             console.log("wrong command");

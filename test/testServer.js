@@ -108,9 +108,9 @@ testServer.testUpgradeSkill = function() {
 
 testServer.testStartTask = function() {
     var data = {
-        eid: "MG101011"
+        taskId: "Task10101"
     }
-    battleTest.testBattle(data);
+    taskTest.testStartTask(data);
 }
 
 testServer.testHandOverTask = function() {

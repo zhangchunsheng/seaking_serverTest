@@ -25,8 +25,8 @@ taskTest.testStartTask = function(data) {
             requests: serverConfig.abTest[consts.serverType.seaking_server].requests,
             concurrency: serverConfig.abTest[consts.serverType.seaking_server].concurrency,
             cookie: cookie,
-            url: abUtil.getCreateMainPlayerUrl(data),
-            output: abUtil.getOutputFile("createMainPlayer")
+            url: abUtil.getStartTaskUrl(data),
+            output: abUtil.getOutputFile("task")
         }), function(err, stdout, stderr) {
             console.log(stdout);
         });
@@ -41,7 +41,7 @@ taskTest.testHandOverTask = function(data) {
             concurrency: serverConfig.abTest[consts.serverType.seaking_server].concurrency,
             cookie: cookie,
             url: abUtil.getCreateMainPlayerUrl(data),
-            output: abUtil.getOutputFile("createMainPlayer")
+            output: abUtil.getOutputFile("task")
         }), function(err, stdout, stderr) {
             console.log(stdout);
         });

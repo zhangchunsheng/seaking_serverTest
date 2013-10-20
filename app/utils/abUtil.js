@@ -39,6 +39,19 @@ abUtil.getMainPlayerUrl = function() {
     return abUtil.getHost(consts.serverType.seaking_server) + "/role/getMainPlayer";
 }
 
+abUtil.getStartTaskUrl = function(data) {
+    var path = "/task/startTask";
+    return abUtil.getUrl(data, path);
+}
+
+abUtil.getUrl = function(data, path) {
+    var url = abUtil.getHost(consts.serverType.seaking_server) + path;
+    var params = abUtil.makeParams(data);
+    if(params != "")
+        url = url + "?" + params;
+    return url;
+}
+
 abUtil.getHost = function(serverType) {
     return "http://" + serverConfig[serverType].host + ":" + serverConfig[serverType].port;
 }
