@@ -79,6 +79,16 @@ abUtil.getUnequipUrl = function(data) {
     return abUtil.getUrl(data, path);
 }
 
+abUtil.getLearnSkillUrl = function(data) {
+    var path = "/equip/unEquip";
+    return abUtil.getUrl(data, path);
+}
+
+abUtil.getUpgradeSkillUrl = function(data) {
+    var path = "/equip/unEquip";
+    return abUtil.getUrl(data, path);
+}
+
 abUtil.getUrl = function(data, path) {
     var url = abUtil.getHost(consts.serverType.seaking_server) + path;
     var params = abUtil.makeParams(data);

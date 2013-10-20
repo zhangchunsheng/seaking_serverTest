@@ -25,8 +25,8 @@ skillTest.testLearnSkill = function(data) {
             requests: serverConfig.abTest[consts.serverType.seaking_server].requests,
             concurrency: serverConfig.abTest[consts.serverType.seaking_server].concurrency,
             cookie: cookie,
-            url: abUtil.getCreateMainPlayerUrl(data),
-            output: abUtil.getOutputFile("createMainPlayer")
+            url: abUtil.getLearnSkillUrl(data),
+            output: abUtil.getOutputFile("skill")
         }), function(err, stdout, stderr) {
             console.log(stdout);
         });
@@ -40,8 +40,8 @@ skillTest.testUpgradeSkill = function(data) {
             requests: serverConfig.abTest[consts.serverType.seaking_server].requests,
             concurrency: serverConfig.abTest[consts.serverType.seaking_server].concurrency,
             cookie: cookie,
-            url: abUtil.getCreateMainPlayerUrl(data),
-            output: abUtil.getOutputFile("createMainPlayer")
+            url: abUtil.getUpgradeSkillUrl(data),
+            output: abUtil.getOutputFile("skill")
         }), function(err, stdout, stderr) {
             console.log(stdout);
         });
