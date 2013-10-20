@@ -5,6 +5,13 @@
  */
 var os = require('os');
 var consts = require('../consts/consts');
+var fileHelper = require('../lib/file/fileHelper');
+
+var serverConfig = require('../../config/server');
+var env = process.env.NODE_ENV || 'development';
+if(serverConfig[env]) {
+    serverConfig = serverConfig[env];
+}
 
 var utils = module.exports;
 
@@ -12,6 +19,31 @@ utils.invokeCallback = function(cb) {
     if(!!cb && typeof cb === 'function') {
         cb.apply(null, Array.prototype.slice.call(arguments, 1));
     }
+}
+
+/**
+ * getCookies
+ * @param next
+ */
+utils.getCookies = function(next) {
+    fileHelper.readFile("data/cookie" + serverConfig.host + ".txt", function(data) {
+        var cookies = [];
+        var cookie = {};
+        var rows = [];
+        for(var i = 0 ; i < data.length ; i++) {
+            if(data[i].indexOf(" ") < 0)
+                continue;
+            rows = data[i].split(" ");
+            cookie = {};
+            cookie.cookie = rows[0];
+            cookie.path = rows[1];
+            cookie.expires = rows[2];
+            cookie.httpOnly = rows[3];
+            cookies.push(cookie);
+        }
+
+        next(cookies);
+    });
 }
 
 /**

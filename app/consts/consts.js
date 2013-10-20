@@ -26,6 +26,9 @@ module.exports = {
             },
             role: {
                 createMainPlayer: "createMainPlayer"
+            },
+            player: {
+                enterIndu: "enterIndu"
             }
         }
     },

@@ -11,6 +11,7 @@ var spawn = require('child_process').spawn,
     user = require('./app/ucenter/user'),
     auth = require('./app/seaking_server/auth'),
     role = require('./app/seaking_server/role'),
+    player = require('./app/seaking_server/player'),
     testServer = require('./test/testServer'),
     consts = require('./app/consts/consts');
 
@@ -35,11 +36,14 @@ function main() {
             auth.auth();
             break;
         case consts.COMMAND.seaking_server.role.createMainPlayer:
-            // 一分钟执行一次，执行多个ab test，-n 1200 -c 20
-            // 注册一秒钟执行执行 -n 60 -c 1
             role.createMainPlayer();
             break;
+        case consts.COMMAND.seaking_server.player.enterIndu:
+            player.enterIndu();
+            break;
         case consts.COMMAND.abTest.testServer:
+            // 一分钟执行一次，执行多个ab test，-n 1200 -c 20
+            // 注册一秒钟执行执行 -n 60 -c 1
             testServer.testServer();
             break;
         case consts.COMMAND.userTest.testAutoRegister:

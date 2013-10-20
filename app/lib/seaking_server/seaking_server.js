@@ -36,3 +36,16 @@ seaking_server.createMainPlayer = function(cookie, data, next) {
         next(data, response);
     });
 }
+
+seaking_server.enterIndu = function(cookie, data, next) {
+    var host = serverConfig.seaking_server.host;
+    var port = serverConfig.seaking_server.port;
+    var path = "/player/enterIndu";
+    var headers = {
+        cookie: cookie
+    };
+
+    httpHelper.get(host, port, path, headers, data, function(data, response) {
+        next(data, response);
+    });
+}

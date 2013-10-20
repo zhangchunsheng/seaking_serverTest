@@ -47,12 +47,13 @@ function createMainPlayer(cookies) {
         return;
     var cookie = cookies.shift();
     var date = new Date();
-    seaking_server.createMainPlayer(cookie.cookie, {
+    var params = {
         cId: 1,
         nickname: "w" + i,
         isRandom: 0
-    }, function(data, response) {
-        fileHelper.saveData([date.toUTCString(), date.getTime(), cookie.cookie, "w" + i, JSON.stringify(data)], [], "createMainPlayer", 'a', function(data) {
+    };
+    seaking_server.createMainPlayer(cookie.cookie, params, function(data, response) {
+        fileHelper.saveData([date.toUTCString(), date.getTime(), cookie.cookie, JSON.stringify(params), JSON.stringify(data)], [], "createMainPlayer", 'a', function(data) {
             i++;
             createMainPlayer(cookies);
         })
