@@ -23,7 +23,8 @@ module.exports = {
             testTriggerEvent: "testTriggerEvent"
         },
         playerTest: {
-            testEnterScene: "testEnterScene"
+            testEnterScene: "testEnterScene",
+            testChangeAndGetSceneData: "testChangeAndGetSceneData"
         },
         shopTest: {
             testBuyItem: "testBuyItem",

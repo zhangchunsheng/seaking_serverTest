@@ -25,8 +25,23 @@ playerTest.testEnterScene = function(data) {
             requests: serverConfig.abTest[consts.serverType.seaking_server].requests,
             concurrency: serverConfig.abTest[consts.serverType.seaking_server].concurrency,
             cookie: cookie,
-            url: abUtil.getCreateMainPlayerUrl(data),
-            output: abUtil.getOutputFile("createMainPlayer")
+            url: abUtil.getEnterSceneUrl(data),
+            output: abUtil.getOutputFile("scene")
+        }), function(err, stdout, stderr) {
+            console.log(stdout);
+        });
+    });
+}
+
+playerTest.testChangeAndGetSceneData = function(data) {
+    abUtil.getRandomCookie(function(cookie) {
+        exec(utils.makeABCommand({
+            verbosity: serverConfig.abTest[consts.serverType.seaking_server].verbosity,
+            requests: serverConfig.abTest[consts.serverType.seaking_server].requests,
+            concurrency: serverConfig.abTest[consts.serverType.seaking_server].concurrency,
+            cookie: cookie,
+            url: abUtil.getChangeAndGetSceneDataUrl(data),
+            output: abUtil.getOutputFile("scene")
         }), function(err, stdout, stderr) {
             console.log(stdout);
         });

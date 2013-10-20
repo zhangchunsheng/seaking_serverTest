@@ -40,7 +40,7 @@ taskTest.testHandOverTask = function(data) {
             requests: serverConfig.abTest[consts.serverType.seaking_server].requests,
             concurrency: serverConfig.abTest[consts.serverType.seaking_server].concurrency,
             cookie: cookie,
-            url: abUtil.getCreateMainPlayerUrl(data),
+            url: abUtil.getHandOverTaskUrl(data),
             output: abUtil.getOutputFile("task")
         }), function(err, stdout, stderr) {
             console.log(stdout);

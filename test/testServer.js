@@ -54,56 +54,73 @@ testServer.testEquip = function() {
     var data = {
         eid: "MG101011"
     }
-    battleTest.testBattle(data);
+    equipTest.testEquip(data);
 }
 
 testServer.testUnequip = function() {
     var data = {
         eid: "MG101011"
     }
-    battleTest.testBattle(data);
+    equipTest.testUnequip(data);
 }
 
 testServer.testTriggerEvent = function() {
     var data = {
         eid: "MG101011"
     }
-    battleTest.testBattle(data);
+    induTest.testTriggerEvent(data);
 }
 
 testServer.testEnterScene = function() {
     var data = {
-        eid: "MG101011"
+
     }
-    battleTest.testBattle(data);
+    playerTest.testEnterScene(data);
+}
+
+testServer.testChangeAndGetSceneData = function() {
+    var currentScene = "city01";
+    var target = "city02";
+    var temp = "";
+    var num = utils.random(1, 2);
+    if(num == 2) {
+        temp = currentScene;
+        currentScene = target;
+        target = temp;
+    }
+    var data = {
+        currentScene: currentScene,
+        target: target
+    }
+    playerTest.testChangeAndGetSceneData(data);
 }
 
 testServer.testBuyItem = function() {
     var data = {
         eid: "MG101011"
     }
-    battleTest.testBattle(data);
+    shopTest.testBuyItem(data);
 }
 
 testServer.testSellItem = function() {
     var data = {
         eid: "MG101011"
     }
-    battleTest.testBattle(data);
+    shopTest.testSellItem(data);
 }
 
 testServer.testLearnSkill = function() {
     var data = {
         eid: "MG101011"
     }
-    battleTest.testBattle(data);
+    skillTest.testLearnSkill(data);
 }
 
 testServer.testUpgradeSkill = function() {
     var data = {
         eid: "MG101011"
     }
-    battleTest.testBattle(data);
+    skillTest.testUpgradeSkill(data);
 }
 
 testServer.testStartTask = function() {
@@ -115,7 +132,7 @@ testServer.testStartTask = function() {
 
 testServer.testHandOverTask = function() {
     var data = {
-        eid: "MG101011"
+        taskId: "Task10101"
     }
-    battleTest.testBattle(data);
+    taskTest.testHandOverTask(data);
 }

@@ -44,6 +44,21 @@ abUtil.getStartTaskUrl = function(data) {
     return abUtil.getUrl(data, path);
 }
 
+abUtil.getHandOverTaskUrl = function(data) {
+    var path = "/task/handOverTask";
+    return abUtil.getUrl(data, path);
+}
+
+abUtil.getEnterSceneUrl = function(data) {
+    var path = "/player/enterScene";
+    return abUtil.getUrl(data, path);
+}
+
+abUtil.getChangeAndGetSceneDataUrl = function(data) {
+    var path = "/player/changeAndGetSceneData";
+    return abUtil.getUrl(data, path);
+}
+
 abUtil.getUrl = function(data, path) {
     var url = abUtil.getHost(consts.serverType.seaking_server) + path;
     var params = abUtil.makeParams(data);

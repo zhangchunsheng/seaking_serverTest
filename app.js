@@ -75,6 +75,9 @@ function main() {
         case consts.COMMAND.playerTest.testEnterScene:
             testServer.testEnterScene();
             break;
+        case consts.COMMAND.playerTest.testChangeAndGetSceneData:
+            testServer.testChangeAndGetSceneData();
+            break;
         case consts.COMMAND.shopTest.testBuyItem:
             testServer.testBuyItem();
             break;
