@@ -24,7 +24,7 @@ taskTest.testStartTask = function(data) {
             verbosity: serverConfig.abTest[consts.serverType.seaking_server].verbosity,
             requests: serverConfig.abTest[consts.serverType.seaking_server].requests,
             concurrency: serverConfig.abTest[consts.serverType.seaking_server].concurrency,
-            timelimit: 60,
+            timelimit: serverConfig.abTest[consts.serverType.seaking_server].timelimit,
             cookie: cookie,
             url: abUtil.getStartTaskUrl(data),
             output: abUtil.getOutputFile("task")
@@ -40,7 +40,7 @@ taskTest.testHandOverTask = function(data) {
             verbosity: serverConfig.abTest[consts.serverType.seaking_server].verbosity,
             requests: serverConfig.abTest[consts.serverType.seaking_server].requests,
             concurrency: serverConfig.abTest[consts.serverType.seaking_server].concurrency,
-            timelimit: 60,
+            timelimit: serverConfig.abTest[consts.serverType.seaking_server].timelimit,
             cookie: cookie,
             url: abUtil.getHandOverTaskUrl(data),
             output: abUtil.getOutputFile("task")

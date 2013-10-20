@@ -24,7 +24,7 @@ battleTest.testBattle = function(data) {
             verbosity: serverConfig.abTest[consts.serverType.seaking_server].verbosity,
             requests: serverConfig.abTest[consts.serverType.seaking_server].requests,
             concurrency: serverConfig.abTest[consts.serverType.seaking_server].concurrency,
-            timelimit: 60,
+            timelimit: serverConfig.abTest[consts.serverType.seaking_server].timelimit,
             cookie: cookie,
             url: abUtil.getBattleUrl(data),
             output: abUtil.getOutputFile("battle")

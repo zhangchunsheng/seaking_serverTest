@@ -23,7 +23,7 @@ userTest.testAutoRegister = function() {
         verbosity: serverConfig.abTest[consts.serverType.ucenter].verbosity,
         requests: serverConfig.abTest[consts.serverType.ucenter].requests,
         concurrency: serverConfig.abTest[consts.serverType.ucenter].concurrency,
-        timelimit: 60,
+        timelimit: serverConfig.abTest[consts.serverType.seaking_server].timelimit,
         url: abUtil.getAutoRegisterUrl(),
         output: abUtil.getOutputFile("autoRegister")
     }), function(err, stdout, stderr) {
