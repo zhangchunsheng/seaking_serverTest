@@ -23,6 +23,7 @@ roleTest.testGetMainPlayerCommand = function() {
         verbosity: serverConfig.abTest[consts.serverType.seaking_server].verbosity,
         requests: serverConfig.abTest[consts.serverType.seaking_server].requests,
         concurrency: serverConfig.abTest[consts.serverType.seaking_server].concurrency,
+        timelimit: 60,
         cookie: "connect.sid=s%3AYcm7d4MODUTacVVyDk6r69Gq.eJrQ4paS43jjOvnSfB74he0R3mVeQZUcIhIO4x11tVw",
         url: abUtil.getMainPlayerUrl(),
         output: abUtil.getOutputFile("getMainPlayer")
@@ -37,6 +38,7 @@ roleTest.testCreateMainPlayer = function(data) {
             verbosity: serverConfig.abTest[consts.serverType.seaking_server].verbosity,
             requests: serverConfig.abTest[consts.serverType.seaking_server].requests,
             concurrency: serverConfig.abTest[consts.serverType.seaking_server].concurrency,
+            timelimit: 60,
             cookie: cookie,
             url: abUtil.getCreateMainPlayerUrl(data),
             output: abUtil.getOutputFile("createMainPlayer")

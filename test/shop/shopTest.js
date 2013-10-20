@@ -24,6 +24,7 @@ shopTest.testBuyItem = function(data) {
             verbosity: serverConfig.abTest[consts.serverType.seaking_server].verbosity,
             requests: serverConfig.abTest[consts.serverType.seaking_server].requests,
             concurrency: serverConfig.abTest[consts.serverType.seaking_server].concurrency,
+            timelimit: 60,
             cookie: cookie,
             url: abUtil.getBuyItemUrl(data),
             output: abUtil.getOutputFile("shop")
@@ -39,6 +40,7 @@ shopTest.testSellItem = function(data) {
             verbosity: serverConfig.abTest[consts.serverType.seaking_server].verbosity,
             requests: serverConfig.abTest[consts.serverType.seaking_server].requests,
             concurrency: serverConfig.abTest[consts.serverType.seaking_server].concurrency,
+            timelimit: 60,
             cookie: cookie,
             url: abUtil.getSellItemUrl(data),
             output: abUtil.getOutputFile("shop")

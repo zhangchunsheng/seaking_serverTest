@@ -24,6 +24,7 @@ playerTest.testEnterScene = function(data) {
             verbosity: serverConfig.abTest[consts.serverType.seaking_server].verbosity,
             requests: serverConfig.abTest[consts.serverType.seaking_server].requests,
             concurrency: serverConfig.abTest[consts.serverType.seaking_server].concurrency,
+            timelimit: 60,
             cookie: cookie,
             url: abUtil.getEnterSceneUrl(data),
             output: abUtil.getOutputFile("scene")
@@ -39,6 +40,7 @@ playerTest.testChangeAndGetSceneData = function(data) {
             verbosity: serverConfig.abTest[consts.serverType.seaking_server].verbosity,
             requests: serverConfig.abTest[consts.serverType.seaking_server].requests,
             concurrency: serverConfig.abTest[consts.serverType.seaking_server].concurrency,
+            timelimit: 60,
             cookie: cookie,
             url: abUtil.getChangeAndGetSceneDataUrl(data),
             output: abUtil.getOutputFile("scene")

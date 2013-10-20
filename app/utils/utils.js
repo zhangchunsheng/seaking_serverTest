@@ -129,6 +129,10 @@ utils.makeABCommand = function(opts) {
         command.push("-c 10");
     }
 
+    if(opts.timelimit) {
+        command.push("-t " + opts.timelimit);
+    }
+
     if(opts.cookie) {
         command.push("-C " + opts.cookie);
     }
