@@ -29,6 +29,13 @@ testServer.testServer = function() {
 
     // seaking_server
     testServer.testBattle();
+
+    testServer.testStartTask();
+    testServer.testHandOverTask();
+
+    testServer.testChangeAndGetSceneData();
+
+    testServer.testShop();
 }
 
 testServer.testAutoRegister = function() {
