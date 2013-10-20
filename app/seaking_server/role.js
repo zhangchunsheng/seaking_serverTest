@@ -49,7 +49,7 @@ function createMainPlayer(cookies) {
     var date = new Date();
     var params = {
         cId: 1,
-        nickname: "w" + i,
+        nickname: "a" + i,
         isRandom: 0
     };
     seaking_server.createMainPlayer(cookie.cookie, params, function(data, response) {
