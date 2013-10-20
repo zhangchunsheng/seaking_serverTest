@@ -64,9 +64,13 @@ httpHelper.get = function(host, port, path, headers, params, cb) {
 
         //the whole response has been recieved, so we just print it out here
         response.on('end', function () {
-            var obj = JSON.parse(str);
-            if(typeof cb == "function")
-                cb(obj, response);
+            if(str.indexOf("<") == 0) {
+                cb({}, null);
+            } else {
+                var obj = JSON.parse(str);
+                if(typeof cb == "function")
+                    cb(obj, response);
+            }
         });
     }
 
