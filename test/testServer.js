@@ -101,6 +101,9 @@ testServer.testBuyItem = function() {
     var shopData = dataApi.shops.findById(currentScene).shopData;
     var num = utils.random(0, shopData.length - 1);
     var wid = shopData[num];
+    var random = utils.random(1, 6);
+    if(random >= 1 && random <= 3)
+        wid = "W01011";
     var data = {
         wid: wid,
         num: 1,
