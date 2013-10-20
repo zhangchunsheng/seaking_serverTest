@@ -17,7 +17,7 @@ user.autoRegister = function(num) {
         fileHelper.saveData(data, order, "userInfo", 'a', function(data) {
             console.log("data has saved");
             num--;
-            if(num == 0) {
+            if(num <= 0) {
                 console.log("task has completed");
             } else {
                 user.autoRegister(num);
