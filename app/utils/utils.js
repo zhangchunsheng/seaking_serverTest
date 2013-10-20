@@ -164,3 +164,10 @@ utils.getPlatform = function() {
 utils.random = function(lower, higher) {
     return Math.floor(Math.random() * (higher + 1 - lower)) + lower;
 }
+
+utils.getMin = function(num1, num2) {
+    if(num1 > num2)
+        return num2;
+    else
+        return num1;
+}

@@ -29,11 +29,12 @@ function main() {
             roleTest.testGetMainPlayerCommand();
             break;
         case consts.COMMAND.ucenter.user.autoRegister:
-            var num = 2;
+            var num = serverConfig.abTest.registerUserNum;
             user.autoRegister(num);
             break;
         case consts.COMMAND.seaking_server.auth.auth:
-            auth.auth();
+            var num = serverConfig.abTest.dayActivityUser;
+            auth.auth(num);
             break;
         case consts.COMMAND.seaking_server.role.createMainPlayer:
             role.createMainPlayer();

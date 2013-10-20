@@ -18,12 +18,13 @@ if(serverConfig[env]) {
 /**
  * 认证并保存cookie
  */
-auth.auth = function() {
+auth.auth = function(num) {
     fileHelper.readFile("data/userInfo" + serverConfig.host + ".txt", function(data) {
         var users = [];
         var userInfo = {};
         var rows = [];
-        for(var i = 0 ; i < data.length ; i++) {
+        num = utils.getMin(num, data.length);
+        for(var i = 0 ; i < num ; i++) {
             if(data[i].indexOf(" ") < 0)
                 continue;
             rows = data[i].split(" ");
