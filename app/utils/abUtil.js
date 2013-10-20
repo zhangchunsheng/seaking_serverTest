@@ -59,6 +59,16 @@ abUtil.getChangeAndGetSceneDataUrl = function(data) {
     return abUtil.getUrl(data, path);
 }
 
+abUtil.getBuyItemUrl = function(data) {
+    var path = "/shop/buyItem";
+    return abUtil.getUrl(data, path);
+}
+
+abUtil.getSellItemUrl = function(data) {
+    var path = "/package/sellItem";
+    return abUtil.getUrl(data, path);
+}
+
 abUtil.getUrl = function(data, path) {
     var url = abUtil.getHost(consts.serverType.seaking_server) + path;
     var params = abUtil.makeParams(data);

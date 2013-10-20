@@ -25,8 +25,8 @@ shopTest.testBuyItem = function(data) {
             requests: serverConfig.abTest[consts.serverType.seaking_server].requests,
             concurrency: serverConfig.abTest[consts.serverType.seaking_server].concurrency,
             cookie: cookie,
-            url: abUtil.getCreateMainPlayerUrl(data),
-            output: abUtil.getOutputFile("createMainPlayer")
+            url: abUtil.getBuyItemUrl(data),
+            output: abUtil.getOutputFile("shop")
         }), function(err, stdout, stderr) {
             console.log(stdout);
         });
@@ -40,8 +40,8 @@ shopTest.testSellItem = function(data) {
             requests: serverConfig.abTest[consts.serverType.seaking_server].requests,
             concurrency: serverConfig.abTest[consts.serverType.seaking_server].concurrency,
             cookie: cookie,
-            url: abUtil.getCreateMainPlayerUrl(data),
-            output: abUtil.getOutputFile("createMainPlayer")
+            url: abUtil.getSellItemUrl(data),
+            output: abUtil.getOutputFile("shop")
         }), function(err, stdout, stderr) {
             console.log(stdout);
         });

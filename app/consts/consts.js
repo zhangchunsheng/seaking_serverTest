@@ -27,6 +27,7 @@ module.exports = {
             testChangeAndGetSceneData: "testChangeAndGetSceneData"
         },
         shopTest: {
+            testShop: "testShop",
             testBuyItem: "testBuyItem",
             testSellItem: "testSellItem"
         },

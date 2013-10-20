@@ -13,6 +13,7 @@ var shopTest = require('./shop/shopTest');
 var skillTest = require('./skill/skillTest');
 var taskTest = require('./task/taskTest');
 var utils = require('../app/utils/utils');
+var dataApi = require('../app/utils/dataApi');
 
 var serverConfig = require('../config/server');
 var env = process.env.NODE_ENV || 'development';
@@ -96,17 +97,37 @@ testServer.testChangeAndGetSceneData = function() {
 }
 
 testServer.testBuyItem = function() {
+    var currentScene = "city01";
+    var shopData = dataApi.shops.findById(currentScene).shopData;
+    var num = utils.random(0, shopData.length - 1);
+    var wid = shopData[num];
     var data = {
-        eid: "MG101011"
+        wid: wid,
+        num: 1,
+        currentScene: currentScene
     }
     shopTest.testBuyItem(data);
 }
 
 testServer.testSellItem = function() {
+    var data = {};
+    var num = utils.random(1, 9);
     var data = {
-        eid: "MG101011"
+        itemId: "W01011",
+        index: num,
+        itemNum: 1,
+        type: "weapons"
     }
     shopTest.testSellItem(data);
+}
+
+testServer.testShop = function() {
+    var num = utils.random(1, 2);
+    if(num == 1) {
+        testServer.testBuyItem();
+    } else {
+        testServer.testSellItem();
+    }
 }
 
 testServer.testLearnSkill = function() {
