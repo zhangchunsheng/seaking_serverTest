@@ -36,6 +36,12 @@ testServer.testServer = function() {
     testServer.testChangeAndGetSceneData();
 
     testServer.testShop();
+
+    testServer.testEquip();
+    testServer.testUnequip();
+
+    testServer.testLearnSkill();
+    testServer.testUpgradeSkill();
 }
 
 testServer.testAutoRegister = function() {
@@ -146,15 +152,27 @@ testServer.testShop = function() {
 }
 
 testServer.testLearnSkill = function() {
+    var skills = ["SK01111", "SK01121", "SK01131"];
+    var num = utils.random(0, 2);
+    var skillId = skills[num];
+    var random = utils.random(1, 6);
+    if(random >= 1 && random <= 3)
+        skillId = "SK01111";
     var data = {
-        eid: "MG101011"
+        skillId: skillId
     }
     skillTest.testLearnSkill(data);
 }
 
 testServer.testUpgradeSkill = function() {
+    var skills = ["SK01111", "SK01112", "SK01113"];
+    var num = utils.random(0, 2);
+    var skillId = skills[num];
+    var random = utils.random(1, 6);
+    if(random >= 1 && random <= 3)
+        skillId = "SK01111";
     var data = {
-        eid: "MG101011"
+        skillId: skillId
     }
     skillTest.testUpgradeSkill(data);
 }

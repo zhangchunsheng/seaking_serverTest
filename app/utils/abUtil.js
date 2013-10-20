@@ -80,12 +80,12 @@ abUtil.getUnequipUrl = function(data) {
 }
 
 abUtil.getLearnSkillUrl = function(data) {
-    var path = "/equip/unEquip";
+    var path = "/player/learnSkill";
     return abUtil.getUrl(data, path);
 }
 
 abUtil.getUpgradeSkillUrl = function(data) {
-    var path = "/equip/unEquip";
+    var path = "/player/upgradeSkill";
     return abUtil.getUrl(data, path);
 }
 
