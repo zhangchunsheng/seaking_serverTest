@@ -7,12 +7,6 @@ var fs = require("fs");
 var path = require('path');
 var Buffer = require('buffer').Buffer;
 
-var serverConfig = require('../../../config/server');
-var env = process.env.NODE_ENV || 'development';
-if(serverConfig[env]) {
-    serverConfig = serverConfig[env];
-}
-
 var fileHelper = module.exports;
 
 fileHelper.createFile = function(fileName) {
@@ -25,6 +19,11 @@ fileHelper.createFile = function(fileName) {
  * @param cb
  */
 fileHelper.saveData = function(data, order, fileName, flags, cb) {
+    var serverConfig = require('../../../config/server');
+    var env = process.env.NODE_ENV || 'development';
+    if(serverConfig[env]) {
+        serverConfig = serverConfig[env];
+    }
     var __parentDir = path.dirname(process.mainModule.filename);
     var stream = fs.createWriteStream(__parentDir + '/data/' + fileName + serverConfig.host + '.txt', {
         encoding: 'utf8',
