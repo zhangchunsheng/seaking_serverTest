@@ -25,7 +25,7 @@ equipTest.testEquip = function(data) {
             requests: serverConfig.abTest[consts.serverType.seaking_server].requests,
             concurrency: serverConfig.abTest[consts.serverType.seaking_server].concurrency,
             cookie: cookie,
-            url: abUtil.getCreateMainPlayerUrl(data),
+            url: abUtil.getEquipUrl(data),
             output: abUtil.getOutputFile("createMainPlayer")
         }), function(err, stdout, stderr) {
             console.log(stdout);
@@ -40,7 +40,7 @@ equipTest.testUnequip = function(data) {
             requests: serverConfig.abTest[consts.serverType.seaking_server].requests,
             concurrency: serverConfig.abTest[consts.serverType.seaking_server].concurrency,
             cookie: cookie,
-            url: abUtil.getCreateMainPlayerUrl(data),
+            url: abUtil.getUnequipUrl(data),
             output: abUtil.getOutputFile("createMainPlayer")
         }), function(err, stdout, stderr) {
             console.log(stdout);

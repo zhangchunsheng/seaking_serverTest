@@ -69,6 +69,16 @@ abUtil.getSellItemUrl = function(data) {
     return abUtil.getUrl(data, path);
 }
 
+abUtil.getEquipUrl = function(data) {
+    var path = "/equip/equip";
+    return abUtil.getUrl(data, path);
+}
+
+abUtil.getUnequipUrl = function(data) {
+    var path = "/equip/unEquip";
+    return abUtil.getUrl(data, path);
+}
+
 abUtil.getUrl = function(data, path) {
     var url = abUtil.getHost(consts.serverType.seaking_server) + path;
     var params = abUtil.makeParams(data);

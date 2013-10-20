@@ -60,14 +60,19 @@ testServer.testBattle = function() {
 
 testServer.testEquip = function() {
     var data = {
-        eid: "MG101011"
+        index: 2,
+        eqId: "W01011",
+        pkgType: "weapons",
+        playerId: ""
     }
     equipTest.testEquip(data);
 }
 
 testServer.testUnequip = function() {
     var data = {
-        eid: "MG101011"
+        eqId: "W01011",
+        type: "weapon",
+        playerId: ""
     }
     equipTest.testUnequip(data);
 }
