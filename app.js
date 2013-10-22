@@ -22,8 +22,6 @@ var spawn = require('child_process').spawn,
     taskTest = require('./test/task/taskTest'),
     consts = require('./app/consts/consts');
 
-utils.doProcess(process);
-
 var serverConfig = require('./config/server');
 var env = process.env.NODE_ENV || 'development';
 if(serverConfig[env]) {

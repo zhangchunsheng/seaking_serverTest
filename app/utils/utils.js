@@ -7,13 +7,37 @@ var os = require('os');
 var consts = require('../consts/consts');
 var fileHelper = require('../lib/file/fileHelper');
 
+var utils = module.exports;
+
+/**
+ *
+ * @param process
+ */
+utils.doProcess = function(process) {
+    var argv = process.argv;
+    var array = [];
+    process.env.METHOD = consts.COMMAND.roleTest.testGetMainPlayerCommand;
+    for(var i = 2 ; i < argv.length ; i++) {
+        array = argv[i].split("=");
+        if(array[0] == "env") {
+            process.env.NODE_ENV = array[1];
+        } else if(array[0] == "serverType") {
+            process.env.SERVER_TYPE = array[1];
+        } else if(array[0] == "port") {
+            process.env.PORT = array[1];
+        } else if(array[0] == "method") {
+            process.env.METHOD = array[1];
+        }
+    }
+}
+
+utils.doProcess(process);
+
 var serverConfig = require('../../config/server');
 var env = process.env.NODE_ENV || 'development';
 if(serverConfig[env]) {
     serverConfig = serverConfig[env];
 }
-
-var utils = module.exports;
 
 utils.invokeCallback = function(cb) {
     if(!!cb && typeof cb === 'function') {
@@ -44,28 +68,6 @@ utils.getCookies = function(next) {
 
         next(cookies);
     });
-}
-
-/**
- *
- * @param process
- */
-utils.doProcess = function(process) {
-    var argv = process.argv;
-    var array = [];
-    process.env.METHOD = consts.COMMAND.roleTest.testGetMainPlayerCommand;
-    for(var i = 2 ; i < argv.length ; i++) {
-        array = argv[i].split("=");
-        if(array[0] == "env") {
-            process.env.NODE_ENV = array[1];
-        } else if(array[0] == "serverType") {
-            process.env.SERVER_TYPE = array[1];
-        } else if(array[0] == "port") {
-            process.env.PORT = array[1];
-        } else if(array[0] == "method") {
-            process.env.METHOD = array[1];
-        }
-    }
 }
 
 utils.testABCommand = function() {
