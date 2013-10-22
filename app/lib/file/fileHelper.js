@@ -18,10 +18,13 @@ var fileHelper = module.exports;
 fileHelper.createFile = function(fileName) {
 
 }
+
 /**
  *
  * @param data
+ * @param order
  * @param fileName
+ * @param flags
  * @param cb
  */
 fileHelper.saveData = function(data, order, fileName, flags, cb) {
