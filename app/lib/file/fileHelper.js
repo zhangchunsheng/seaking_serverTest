@@ -53,10 +53,9 @@ fileHelper.saveData = function(data, order, fileName, flags, cb) {
             }
         }
     }
-
+    str += "\n";
     stream.write(str);
 
-    stream.write("\n");
     stream.end();
 
     cb(data);
